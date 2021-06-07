@@ -1,0 +1,77 @@
+:root{
+    --clr-neon: #f37126;
+    --clr-bg: rgb(32, 6, 6);
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--clr-bg);
+}
+.block
+{
+    width: 95%;
+    position: relative;
+    height: px;
+    display: flex;
+    margin: 40vh auto;
+    border:2px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.neon-button{
+    color: var(--clr-neon);
+    border: .45em solid var(--clr-neon);
+    border-radius: 0.45rem;
+    height: 80%;
+    width: 8%;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.25em 1em;
+    text-shadow: 0 0 0.25em hsl(0 0% 100% / 0.2), 0 0 0.5em var(--clr-neon);
+    background-color: var(--clr-bg);
+    box-shadow: inset 0 0 1em 0 var(--clr-neon),0 0 1em 0 var(--clr-neon);
+}
+.neon-button::before{
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    background: var(--clr-neon);
+    margin-top: 40px;
+    top:50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(10em) rotateX(60deg) scale(1,0.5);
+    filter: blur(10em);
+    opacity: 0.05;
+}
+
+.neon-button:hover::before{
+    opacity: 0.5;
+}
+.neon-button:hover,
+.neon-button:focus{
+    background: var(--clr-neon);
+    color: var(--clr-bg);
+    text-shadow: none;
+    box-shadow: 0 0 1.5em 0.5em var(--clr-neon);
+}
+
+kbd{
+    display: block;
+    font-size: 4rem;
+}
+span{
+    font-weight: bold;
+}
+
+.playing{
+    transform: scale(1.1);
+    border-color: yellowgreen;
+    box-shadow: 0 0 1rem yellowgreen;
+}
+
